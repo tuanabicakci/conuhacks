@@ -67,7 +67,7 @@ st.markdown(
     }
     </style>
     <div class="legend">
-        <b>Liveability Index (%)</b><br>
+        <b>Livability Index (%)</b><br>
         <div class="legend-item">
             <div class="color-circle" style="background: #08306b; width: 30px; height: 30px;"></div> (80+)
         </div>
