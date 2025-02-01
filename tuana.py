@@ -2,10 +2,9 @@ import pydeck
 import streamlit as st
 import pandas as pd
 import numpy as np
-import pydeck as pdk
 
-#map_data = pd.read_csv("montreal-districts.csv")
-#st.map(map_data)
+# map_data = pd.read_csv("montreal-districts.csv")
+# st.map(map_data)
 
 district_data = pd.read_csv(
     "montreal-districts.csv",
@@ -23,6 +22,7 @@ point_layer = pydeck.Layer(
     pickable=True,
     auto_highlight=True,
     get_radius="size",
+
 )
 
 view_state = pydeck.ViewState(
@@ -32,7 +32,7 @@ chart = pydeck.Deck(
     point_layer,
     initial_view_state=view_state,
     tooltip={"text": "{district}, {lat}, {lon}"},
-
+    map_style="mapbox://styles/mapbox/streets-v12",
 )
 
 event = st.pydeck_chart(chart, on_select="rerun", selection_mode="multi-object")
