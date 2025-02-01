@@ -35,6 +35,23 @@ chart = pydeck.Deck(
     map_style="mapbox://styles/mapbox/streets-v12",
 )
 
-event = st.pydeck_chart(chart, on_select="rerun", selection_mode="multi-object")
+event = st.pydeck_chart(chart, on_select="rerun")
+if event.selection and 'objects' in event.selection and "district-names" in event.selection['objects']:
+    # Access the first object in the 'district-names' list
+    selected_object = event.selection['objects']["district-names"][0]
 
-event.selection
+    # Extract district data
+    district = selected_object["district"]
+    lat = selected_object["lat"]
+    lon = selected_object["lon"]
+    size = selected_object["size"]
+
+    # Display the details
+    st.write(f"**District:** {district}")
+    st.write(f"**Latitude:** {lat}")
+    st.write(f"**Longitude:** {lon}")
+    st.write(f"**Size:** {size}")
+else:
+    st.write("### No district selected yet. Please click on a district to see details.")
+
+
