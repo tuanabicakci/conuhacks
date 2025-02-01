@@ -1,9 +1,8 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import pydeck as pdk
 
-df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [45.5019, -73.5674],
-    columns=["lat", "lon"],
-)
-st.map(df)
+map_data = pd.read_csv("montreal-districts.csv")
+st.map(map_data)
+
