@@ -4,6 +4,13 @@ import pandas as pd
 
 st.markdown(
     """
+    <h1 style='text-align: center; color: #08306b;'>Montreal Neighbourhood Livability Index</h1>
+    """,
+    unsafe_allow_html=True,
+)
+
+st.markdown(
+    """
     If you are a **student** or **immigrant** who just arrived in Montreal and don't know in which neighbourhood to rent, we got the perfect index for you!  
     You can **filter your options** and choose the criteria that matter most to you, including:
     - 🛡️ **Safety**
