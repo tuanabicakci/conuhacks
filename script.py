@@ -46,15 +46,15 @@ district_data["size"] = district_data["Composite Score"] * 17
 
 def get_color(score):
     if score >= 70:
-        return [85, 224, 70]  # Dark Blue (80+)
+        return [61,133,198]  # (80+)
     elif score >= 60:
-        return [22, 16, 181]  # Blue (60-80)
+        return [106,168,79]  # Green (60-80)
     elif score >= 40:
-        return [245, 235, 54]  # Light Blue (40-60)
+        return [241,194,50]  # Yellow (40-60)
     elif score >= 20:
-        return [237, 152, 24]  # Pale Blue (20-40)
+        return [230,145,56]  # Orange (20-40)
     else:
-        return [224, 72, 70]  # White (0-20)
+        return [204,0,0]  # Red (0-20)
 
 
 district_data["color"] = district_data["Composite Score"].apply(get_color)
@@ -156,19 +156,19 @@ st.markdown(
     <div class="legend">
         <b>Livability Index (%)</b><br>
         <div class="legend-item">
-            <div class="color-circle" style="background: #08306b; width: 30px; height: 30px;"></div> (80+)
+            <div class="color-circle" style="background: #3d85c6; width: 30px; height: 30px;"></div> (70+)
         </div>
         <div class="legend-item">
-            <div class="color-circle" style="background: #2171b5; width: 25px; height: 25px;"></div> (60-80)
+            <div class="color-circle" style="background: #6aa84f; width: 25px; height: 25px;"></div> (60-70)
         </div>
         <div class="legend-item">
-            <div class="color-circle" style="background: #6baed6; width: 20px; height: 20px;"></div> (40-60)
+            <div class="color-circle" style="background: #f1c232; width: 20px; height: 20px;"></div> (40-60)
         </div>
         <div class="legend-item">
-            <div class="color-circle" style="background: #bdd7e7; width: 15px; height: 15px;"></div> (20-40)
+            <div class="color-circle" style="background: #e69138; width: 15px; height: 15px;"></div> (20-40)
         </div>
         <div class="legend-item">
-            <div class="color-circle" style="background: #f7fbff; width: 10px; height: 10px;"></div> (0-20)
+            <div class="color-circle" style="background: #cc0000; width: 10px; height: 10px;"></div> (0-20)
         </div>
     </div>
     """,
