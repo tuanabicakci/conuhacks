@@ -54,9 +54,6 @@ def get_color(score):
 
 district_data["color"] = district_data["total-score"].apply(get_color)
 
-# Ensure color and size data are valid
-st.write("Debugging Data:", district_data[["district", "lat", "lon", "total-score", "color", "size"]])
-
 # Create the Pydeck Layer
 point_layer = pydeck.Layer(
     "ScatterplotLayer",
