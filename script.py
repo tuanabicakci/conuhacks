@@ -6,6 +6,21 @@ import numpy as np
 # map_data = pd.read_csv("montreal-districts.csv")
 # st.map(map_data)
 
+st.markdown(
+    """
+    If you are a **student** or **immigrant** who just arrived in Montreal and don't know in which neighbourhood to rent, we got the perfect index for you!  
+    You can **filter your options** and choose the criteria that matter most to you, including:
+    - 🛡️ **Safety**
+    - 💼 **Economic Opportunity**
+    - 🤝 **Social Inclusion**
+    - 🚆 **Transportation**
+    - 🏘️ **Housing & Infrastructure**
+    - 📚 **Education & Recreation**
+
+    Use the filters above the map to explore and find your ideal neighbourhood!
+    """
+)
+
 district_data = pd.read_csv(
     "montreal-districts-with-filters.csv",
     header=0,
