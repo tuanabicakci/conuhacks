@@ -1,0 +1,20 @@
+Neighborhood,Composite_Score,Safety,Economic_Opportunity,Social_Inclusion,Environment,Transportation,Housing_Infrastructure,Education_Recreation
+Ahuntsic-Cartierville,0.686,0.185,0.142,0.092,0.099,0.072,0.044,0.052
+Anjou,0.650,0.170,0.135,0.085,0.095,0.068,0.042,0.055
+Côte-des-Neiges–Notre-Dame-de-Grâce,0.700,0.190,0.145,0.095,0.102,0.075,0.046,0.057
+LaSalle,0.670,0.180,0.138,0.088,0.097,0.070,0.043,0.054
+Lachine,0.665,0.178,0.136,0.087,0.096,0.069,0.042,0.057
+Le Plateau-Mont-Royal,0.720,0.195,0.150,0.100,0.105,0.078,0.048,0.064
+Le Sud-Ouest,0.690,0.188,0.142,0.092,0.100,0.073,0.045,0.060
+L’Île-Bizard–Sainte-Geneviève,0.640,0.172,0.130,0.082,0.092,0.065,0.040,0.059
+Mercier–Hochelaga-Maisonneuve,0.630,0.170,0.128,0.080,0.090,0.064,0.039,0.059
+Montréal-Nord,0.655,0.175,0.132,0.084,0.094,0.066,0.041,0.063
+Outremont,0.680,0.183,0.139,0.089,0.098,0.071,0.043,0.057
+Pierrefonds-Roxboro,0.675,0.181,0.137,0.088,0.097,0.070,0.042,0.060
+Rivière-des-Prairies–Pointe-aux-Trembles,0.645,0.173,0.131,0.083,0.093,0.065,0.040,0.060
+Rosemont–La Petite-Patrie,0.695,0.186,0.141,0.091,0.100,0.072,0.044,0.061
+Saint-Laurent,0.660,0.177,0.134,0.086,0.095,0.068,0.041,0.059
+Saint-Léonard,0.650,0.172,0.130,0.082,0.092,0.065,0.040,0.069
+Verdun,0.670,0.180,0.138,0.088,0.097,0.070,0.043,0.054
+Ville-Marie,0.686,0.185,0.142,0.092,0.099,0.072,0.044,0.052
+Villeray–Saint-Michel–Parc-Extension,0.685,0.184,0.141,0.091,0.099,0.071,0.043,0.056

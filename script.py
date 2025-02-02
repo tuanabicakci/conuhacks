@@ -29,31 +29,35 @@ district_data = pd.read_csv("montreal-districts-with-filters.csv")
 # Ensure numeric columns are properly parsed
 district_data["lat"] = pd.to_numeric(district_data["lat"], errors="coerce")
 district_data["lon"] = pd.to_numeric(district_data["lon"], errors="coerce")
-district_data["total-score"] = pd.to_numeric(district_data["total-score"], errors="coerce")
+district_data["Composite Score"] = pd.to_numeric(district_data["Composite Score"], errors="coerce")
 
 filters = st.multiselect(
     "Select filters",
-    options=["🛡 Safety", "💼 Economic Opportunity", "🤝 Social Inclusion", "🚆 Transportation", "🏘 Housing & Infrastructure", "📚 Education & Recreation"],
-    default=["🛡 Safety", "💼 Economic Opportunity", "🤝 Social Inclusion", "🚆 Transportation", "🏘 Housing & Infrastructure", "📚 Education & Recreation"],
+    options=["🛡 Safety", "💼 Economic Opportunity", "🤝 Social Inclusion", "🚆 Transportation",
+             "🏘 Housing & Infrastructure", "🌳Environment", "📚 Education & Recreation"],
+    default=["🛡 Safety", "💼 Economic Opportunity", "🤝 Social Inclusion", "🚆 Transportation",
+             "🏘 Housing & Infrastructure", "🌳Environment", "📚 Education & Recreation"],
 )
 
-district_data["total-score"] = district_data[filters].sum(axis=1)
+district_data["Composite Score"] = district_data[filters].sum(axis=1)*100
 
-district_data["size"] = district_data["total-score"] * 5
+district_data["size"] = district_data["Composite Score"] * 17
+
 
 def get_color(score):
-    if score >= 80:
-        return [8, 48, 107]  # Dark Blue (80+)
+    if score >= 70:
+        return [85, 224, 70]  # Dark Blue (80+)
     elif score >= 60:
-        return [33, 113, 181]  # Blue (60-80)
+        return [22, 16, 181]  # Blue (60-80)
     elif score >= 40:
-        return [107, 174, 214]  # Light Blue (40-60)
+        return [245, 235, 54]  # Light Blue (40-60)
     elif score >= 20:
-        return [189, 215, 231]  # Pale Blue (20-40)
+        return [237, 152, 24]  # Pale Blue (20-40)
     else:
-        return [247, 251, 255]  # White (0-20)
+        return [224, 72, 70]  # White (0-20)
 
-district_data["color"] = district_data["total-score"].apply(get_color)
+
+district_data["color"] = district_data["Composite Score"].apply(get_color)
 
 point_layer = pydeck.Layer(
     "ScatterplotLayer",
@@ -73,16 +77,16 @@ view_state = pydeck.ViewState(
 chart = pydeck.Deck(
     layers=[point_layer],
     initial_view_state=view_state,
-    tooltip={"html": "<b>District:</b> {district}<br><b>Score:</b> {total-score}"},
+    tooltip={"html": "<b>District:</b> {district}<br><b>Score:</b> {Composite Score}"},
     map_style="mapbox://styles/mapbox/streets-v12",
 )
 
 st.pydeck_chart(chart)
 
-sorted_data = district_data.sort_values(by="total-score", ascending=False, ignore_index=True, axis=0)
+sorted_data = district_data.sort_values(by="Composite Score", ascending=False, ignore_index=True, axis=0)
 sorted_data.index = sorted_data.index + 1
 # Convert the DataFrame to an HTML table
-html_table = sorted_data[["district", "total-score"]].to_html(
+html_table = sorted_data[["district", "Composite Score"]].to_html(
     index=True,
     classes="styled-table",
 )

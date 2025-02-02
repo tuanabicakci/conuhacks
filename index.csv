@@ -1,0 +1,24 @@
+Category,Variable,Weight,Rationale
+Safety (25%),Fire incidence per neighborhood,0.07,Directly impacts daily security.
+,Proximity to fire stations,0.05,Faster emergency response improves safety.
+,Safety index per neighborhood,0.06,Composite measure indicating overall safety conditions.
+,Vulnerability index per neighborhood,0.07,Reflects susceptibility to various risks and hazards.
+Economic Opportunity (20%),Household income per neighborhood,0.08,Financial stability is critical for quality of life.
+,House transaction rates per neighborhood,0.06,Indicates economic vibrancy and housing market health.
+,Commercial area occupation per neighborhood,0.06,Proxy for job availability and business activity.
+Social Inclusion (15%),Number of events per neighborhood,0.06,Social integration and community engagement.
+,Immigrant population density,0.05,Community support and cultural familiarity.
+,Vulnerability index per neighborhood,0.04,Lower vulnerability indicates better social cohesion and support systems.
+Environment (12%),Air quality per neighborhood,0.04,Direct health impact.
+,Park and public building per neighborhood,0.04,Access to green spaces and essential services improves quality of life.
+,Water quality,0.03,Essential for health and daily life.
+,Sound level measurements (inverse),0.01,Lower noise pollution improves quality of life.
+Transportation (10%),Transit stops (connectivity score),0.04,Accessibility to jobs/services.
+,Cycling network (km per area),0.03,Affordable and healthy commuting.
+,Existence of subway,0.03,High-capacity transit reduces commute times.
+Housing & Infrastructure (8%),Housing deterioration notices (inverse),0.03,Indicates neighborhood upkeep.
+,Pest control interventions (inverse),0.02,Reflects sanitation and housing quality.
+,Park and public building per neighborhood,0.03,Access to essential services.
+Education & Recreation (10%),Number of schools (per capita),0.04,Access to education for families.
+,Large parks (per capita),0.03,Recreational spaces improve mental health.
+,Ice rinks (per capita),0.03,Cultural and winter activity access.
