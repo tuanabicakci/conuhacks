@@ -83,7 +83,47 @@ else:
 
 sorted_data = district_data.sort_values(by="total-score", ascending=False, ignore_index=True, axis=0)
 sorted_data.index = sorted_data.index + 1
-st.write("Sorted Data:", sorted_data[["district", "total-score"]])
+# Convert the DataFrame to an HTML table
+html_table = sorted_data[["district", "total-score"]].to_html(
+    index=True,
+    classes="styled-table",
+)
+
+# Custom CSS styling for the table
+st.markdown(
+    """
+    <style>
+    .styled-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0;
+        font-size: 16px;
+        text-align: left;
+       
+    }
+    .styled-table th, .styled-table td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        
+    }
+    .styled-table th {
+        background-color: #9cdbfb;
+        text-align: left;
+        color: white;
+    }
+    .styled-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .styled-table tr:hover {
+        background-color: #ddd;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
+# Display the styled table
+st.markdown(html_table, unsafe_allow_html=True)
 
 st.markdown(
     """
