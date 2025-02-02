@@ -79,7 +79,11 @@ if event.selection and 'objects' in event.selection and "district-names" in even
     st.write(f"**Longitude:** {lon}")
     st.write(f"**Score:** {size}")
 else:
-    st.write("### No district selected yet. Please click on a district to see details.")
+    st.write("No district selected yet. Please click on a district to see details.")
+
+sorted_data = district_data.sort_values(by="total-score", ascending=False, ignore_index=True, axis=0)
+sorted_data.index = sorted_data.index + 1
+st.write("Sorted Data:", sorted_data[["district", "total-score"]])
 
 st.markdown(
     """

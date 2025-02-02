@@ -20,11 +20,9 @@ filters = st.multiselect(
 
 district_data["total-score"] = district_data[filters].sum(axis=1)
 
-district_data["size"] = district_data["total-score"] * 5
+district_data["size"] = district_data["total-score"]*5
 
 total_score = district_data["total-score"]
-
-
 def get_color(score):
     if score >= 80:
         return [8, 48, 107]
@@ -64,6 +62,7 @@ chart = pydeck.Deck(
 
 event = st.pydeck_chart(chart, on_select="rerun")
 
+
 if event.selection and 'objects' in event.selection and "district-names" in event.selection['objects']:
     # Access the first object in the 'district-names' list
     selected_object = event.selection['objects']["district-names"][0]
@@ -80,7 +79,11 @@ if event.selection and 'objects' in event.selection and "district-names" in even
     st.write(f"**Longitude:** {lon}")
     st.write(f"**Score:** {size}")
 else:
-    st.write("### No district selected yet. Please click on a district to see details.")
+    st.write("No district selected yet. Please click on a district to see details.")
+
+sorted_data = district_data.sort_values(by="total-score", ascending=False, ignore_index=True, axis=0)
+sorted_data.index = sorted_data.index + 1
+st.write("Sorted Data:", sorted_data[["district", "total-score"]])
 
 st.markdown(
     """
